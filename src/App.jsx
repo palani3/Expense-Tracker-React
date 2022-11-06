@@ -19,6 +19,8 @@ function App() {
    <Income/>
    
 
+ 
+
    <Addtransaction/>
    <TransactionList/>
    </GlobalProvider>
