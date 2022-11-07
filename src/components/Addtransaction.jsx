@@ -11,7 +11,7 @@ export default function Addtransaction() {
         e.preventDefault();
   
      
-        console.log('You clicked submit.');
+   
         console.log("update")
         const newTransaction = {
             id: Math.floor(Math.random() * 10000),
@@ -19,11 +19,19 @@ export default function Addtransaction() {
             amount:+amount,
         };
         addTransaction(newTransaction); 
+        amount
+      settext("")
+
+
+
+ 
     }
 
   return (
-    <div>
-      <h1>Addtransaction</h1>
+    <div classname="container text-center ">
+      <div className="row justify-content-md-center">
+        <div className="col-md-12 px-5">
+      <h3>Add Transaction</h3>
       <form onSubmit={onSubmitData}>
         <div className="form-floating mb-3">
           <input
@@ -62,6 +70,8 @@ export default function Addtransaction() {
         </button>
    
       </form>
+      </div>
+    </div>
     </div>
   );
 }

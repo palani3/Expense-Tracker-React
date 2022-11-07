@@ -16,13 +16,34 @@ export default function Transaction({transaction}) {
     const {deletetransaction} = useContext(GlobalContext)
     const sign = transaction.amount < 0 ? "-":"+";
   return (
+    <>
+
     
-    <li className={transaction.amount < 0 ? "Minus" : " Plus"}>
-        {transaction.text}<span>
-           {sign} {moneyFormater(transaction.amount)}
-        </span>
+
+<div className="list">
+
+<table className='table p-0'>
+
+<tbody className=''>
+<tr>
+{/* <th className='p-0' scope="row">    </th> */}
+<td className='p-0'>{transaction.text}</td>
+<td className='p-0'>{sign}</td>
+<td className='p-0'>{moneyFormater(transaction.amount)}</td>
+<td className='p-0'> <button onClick={ ()=> deletetransaction(transaction.id)}  className="btn btn-danger">Delete</button></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+    
+     {/* <li className={transaction.amount < 0 ? "Minus" : " Plus"}>
+         {transaction.text}<span>
+            {sign} {moneyFormater(transaction.amount)}
+         </span>
         <button onClick={ ()=> deletetransaction(transaction.id)}>X</button>
-    </li>
+     </li> */}
+    </>
 
   )
 }
